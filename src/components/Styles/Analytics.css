@@ -1,0 +1,168 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    padding: 2rem;
+    background-color: #1e293b;
+    text-align: center;
+}
+
+.hero h2 {
+    color: #38bdf8;
+    margin-bottom: 1rem;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.filters select,
+.filters input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #334155;
+    background-color: #334155;
+    color: #f1f5f9;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* Card Styling */
+.card {
+    background: #1e293b;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    min-height: 450px;
+    /* space for charts */
+    display: flex;
+    flex-direction: column;
+    /* Removed any width restriction */
+}
+
+.card h3 {
+    color: #38bdf8;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    /* Prevent title wrap */
+}
+
+/* Chart Canvas */
+.chart-container {
+    position: relative;
+    flex: 1;
+    /* takes remaining vertical space */
+    min-height: 300px;
+    /* explicit height */
+    width: 100%;
+}
+
+/* Restock Alerts */
+#restockAlerts li {
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+/* Header Styling */
+header {
+    background-color: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Title */
+header h1 {
+    font-size: 1.5rem;
+    color: #38bdf8;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Header Navigation */
+header nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+header nav a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #38bdf8;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+header nav a:hover {
+    color: #38bdf8;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+.analytics-chart-container {
+    flex: 1;
+    min-height: 300px;
+    /* Or whatever size works */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.analytics-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    /* removes inline canvas default */
+}
